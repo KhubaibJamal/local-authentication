@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:local_password/view/home_view.dart';
 
 class FingerprintView extends StatelessWidget {
   const FingerprintView({super.key});
@@ -40,14 +41,23 @@ class FingerprintView extends StatelessWidget {
               const Divider(color: Colors.white54),
               const SizedBox(height: 10),
               ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeView()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                ),
                 icon: const Icon(
                   Icons.fingerprint,
-                  size: 24,
+                  size: 34,
+                  color: Color(0xFF04151f),
                 ),
                 label: const Text(
                   "Authenticate",
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 24, color: Color(0xFF04151f)),
                 ),
               ),
             ],
